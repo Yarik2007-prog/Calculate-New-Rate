@@ -32,10 +32,11 @@ function getRating(rateOfWinner, rateOfLoser) {
     }
 
     if (rateOfWinner < rateOfLoser) {
-        return Math.round(((rateOfLoser - rateOfWinner + 5) / 3) * 10) / 10;
+        const bonus = (rateOfLoser - rateOfWinner + 5) / 3;
+        return rateOfWinner + Math.round(bonus * 10) / 10;
     }
 
     return rateOfWinner;
 }
 
-console.log(getRating(28, 2));
+console.log(getRating(10, 30));
